@@ -16,7 +16,26 @@ public class Main {
         }
     }
 
+    public static void two() {
+        String first_word = "make install";
+
+        char[] arr = first_word.toCharArray();
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            char temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+
+            left++;
+            right--;
+        }
+
+        System.out.println(new String(arr));
+    }
+
     public static void main(String[] args) {
-        one();
+        two();
     }
 }
