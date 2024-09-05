@@ -69,8 +69,26 @@ public class Main {
         scanner.close();
     }
 
+    public static void four() {
+        double sum = 0;
+        int n = 2;
+
+        while (true) {
+            double term = 1 / (Math.pow(n, 2)+n-2);
+
+            if (Math.abs(term) < 1e-6) {
+                break;
+            }
+
+            sum += term;
+            n++;
+        }
+
+        System.out.println("Сумма ряда: " + sum);
+    }
+
 
     public static void main(String[] args) {
-        three();
+        four();
     }
 }
