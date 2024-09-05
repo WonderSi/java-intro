@@ -87,8 +87,17 @@ public class Main {
         System.out.println("Сумма ряда: " + sum);
     }
 
+    public static void five() {
+        String text = "A man, a plan, a canal: Panama";
+
+        String cleanedText = text.replaceAll("[^a-zA-Z0-9]", "");
+        StringBuilder sb = new StringBuilder(cleanedText);
+        String reversedText = sb.reverse().toString();
+
+        System.out.println(cleanedText.equalsIgnoreCase(reversedText));
+    }
 
     public static void main(String[] args) {
-        four();
+        five();
     }
 }
