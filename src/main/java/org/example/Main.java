@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void one() {
@@ -35,7 +37,40 @@ public class Main {
         System.out.println(new String(arr));
     }
 
+    public static void three() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Получаем коэффициенты от пользователя
+        System.out.print("Введите значение a: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Введите значение b: ");
+        double b = scanner.nextDouble();
+
+        System.out.print("Введите значение c: ");
+        double c = scanner.nextDouble();
+
+        // Вычисляем дискриминант
+        double d = b * b - 4 * a * c;
+
+        // Проверяем наличие вещественных корней
+        if (d >= 0) {
+            // Вычисляем корни
+            double root1 = (-b + Math.sqrt(d)) / (2 * a);
+            double root2 = (-b - Math.sqrt(d)) / (2 * a);
+
+            if (Math.abs(root1 % 1) > 0.00001 || Math.abs(root2 % 1) > 0.00001) {
+                System.out.printf("Корни уравнения: %.2f и %.2f%n", root1, root2);
+            }
+        } else {
+            System.out.println("Уравнение не имеет вещественных корней.");
+        }
+
+        scanner.close();
+    }
+
+
     public static void main(String[] args) {
-        two();
+        three();
     }
 }
