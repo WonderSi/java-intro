@@ -12,9 +12,9 @@ public class Main {
                 System.out.println("fizz");
             } else if (i % 7 == 0) {
                 System.out.println("buzz");
+            } else {
+                System.out.println(i);
             }
-
-            System.out.println(i);
         }
     }
 
@@ -34,13 +34,12 @@ public class Main {
             right--;
         }
 
-        System.out.println(new String(arr));
+        System.out.print(new String(arr));
     }
 
     public static void three() {
         Scanner scanner = new Scanner(System.in);
 
-        // Получаем коэффициенты от пользователя
         System.out.print("Введите значение a: ");
         double a = scanner.nextDouble();
 
@@ -50,12 +49,9 @@ public class Main {
         System.out.print("Введите значение c: ");
         double c = scanner.nextDouble();
 
-        // Вычисляем дискриминант
         double d = b * b - 4 * a * c;
 
-        // Проверяем наличие вещественных корней
         if (d >= 0) {
-            // Вычисляем корни
             double root1 = (-b + Math.sqrt(d)) / (2 * a);
             double root2 = (-b - Math.sqrt(d)) / (2 * a);
 
@@ -98,6 +94,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        five();
+        // Прописываем ф-цию для ее вызова
     }
 }
