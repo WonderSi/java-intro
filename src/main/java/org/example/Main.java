@@ -1,25 +1,23 @@
 package org.example;
 
-import java.util.Scanner;
 
 public class Main {
+    public static String one(int n) {
 
-    public static void one() {
-        for (int i = 1; i <= 500; i++) {
-            if (i % 5 == 0 && i % 7 == 0 ) {
-                System.out.println("fizzbuzz");
-            } else if (i % 5 == 0) {
-                System.out.println("fizz");
-            } else if (i % 7 == 0) {
-                System.out.println("buzz");
+            if (n % 5 == 0 && n % 7 == 0 ) {
+                return "fizzbuzz";
+            } else if (n % 5 == 0) {
+                return "fizz";
+            } else if (n % 7 == 0) {
+                return "buzz";
             } else {
-                System.out.println(i);
-            }
+                return Integer.toString(n);
         }
     }
 
-    public static void two() {
-        String first_word = "make install";
+    public static String two(String n) {
+
+        String first_word = n;
 
         char[] arr = first_word.toCharArray();
         int left = 0;
@@ -34,45 +32,35 @@ public class Main {
             right--;
         }
 
-        System.out.print(new String(arr));
+        return String.valueOf(arr);
     }
 
-    public static void three() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите значение a: ");
-        double a = scanner.nextDouble();
-
-        System.out.print("Введите значение b: ");
-        double b = scanner.nextDouble();
-
-        System.out.print("Введите значение c: ");
-        double c = scanner.nextDouble();
-
+    public static String three(double a, double b, double c) {
         double d = b * b - 4 * a * c;
 
-        if (d >= 0) {
-            double root1 = (-b + Math.sqrt(d)) / (2 * a);
-            double root2 = (-b - Math.sqrt(d)) / (2 * a);
+        double root1 = 0;
+        double root2 = 0;
 
-            if (Math.abs(root1 % 1) > 0.00001 || Math.abs(root2 % 1) > 0.00001) {
-                System.out.printf("Корни уравнения: %.2f и %.2f%n", root1, root2);
-            }
-        } else {
-            System.out.println("Уравнение не имеет вещественных корней.");
+        if (d >= 0) {
+            root1 = (-b + Math.sqrt(d)) / (2 * a);
+            root2 = (-b - Math.sqrt(d)) / (2 * a);
         }
 
-        scanner.close();
+        if (Math.abs(root1 % 1) > 0.00001 || Math.abs(root2 % 1) > 0.00001) {
+            return "Корни уравнения: " + root1 + " и " + root2;
+        } else {
+            return "Уравнение не имеет вещественных корней.";
+        }
+
     }
 
-    public static void four() {
+    public static double four(double n, double m) {
         double sum = 0;
-        int n = 2;
 
         while (true) {
             double term = 1 / (Math.pow(n, 2)+n-2);
 
-            if (Math.abs(term) < 1e-6) {
+            if (Math.abs(term) < m) {
                 break;
             }
 
@@ -80,20 +68,46 @@ public class Main {
             n++;
         }
 
-        System.out.println("Сумма ряда: " + sum);
+        return sum;
     }
 
-    public static void five() {
-        String text = "A man, a plan, a canal: Panama";
+    public static boolean five(String n) {
+        String text = n;
 
         String cleanedText = text.replaceAll("[^a-zA-Z0-9]", "");
         StringBuilder sb = new StringBuilder(cleanedText);
         String reversedText = sb.reverse().toString();
 
-        System.out.println(cleanedText.equalsIgnoreCase(reversedText));
+        boolean checkText = cleanedText.equalsIgnoreCase(reversedText);
+
+        return checkText;
     }
 
     public static void main(String[] args) {
-        // Прописываем ф-цию для ее вызова
+
+        // (1)
+        int n1 = 500;
+        for (int i = 0; i <= n1; i++) {
+            System.out.println(one(i));
+        }
+        // (2)
+        String n2 = "Вера, котяра, – харя Токарева";
+        String result2 = two(n2);
+        System.out.println(result2);
+        // (3)
+        double a2 = 2;
+        double b2 = -4;
+        double c2 = 1;
+
+        System.out.println(three(a2, b2, c2));
+        // (4)
+        double n4 = 2;
+        double m4 = 1e-6;
+        double result4 = four(n4, m4);
+        System.out.println(result4);
+        // (5)
+        String n5 = "Аня как Яна";
+        boolean result5 = five(n5);
+        System.out.println(result5);
     }
 }
