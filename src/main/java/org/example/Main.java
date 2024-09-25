@@ -2,7 +2,7 @@ package org.example;
 
 
 public class Main {
-    public static String one(int n) {
+    public static String fizzBuzz(int n) {
 
             if (n % 5 == 0 && n % 7 == 0 ) {
                 return "fizzbuzz";
@@ -15,11 +15,9 @@ public class Main {
         }
     }
 
-    public static String two(String n) {
+    public static String reverseString(String str) {
 
-        String first_word = n;
-
-        char[] arr = first_word.toCharArray();
+        char[] arr = str.toCharArray();
         int left = 0;
         int right = arr.length - 1;
 
@@ -35,7 +33,7 @@ public class Main {
         return String.valueOf(arr);
     }
 
-    public static String three(double a, double b, double c) {
+    public static String quadraticEquation(double a, double b, double c) {
         double d = b * b - 4 * a * c;
 
         double root1 = 0;
@@ -47,18 +45,20 @@ public class Main {
         }
 
         if (Math.abs(root1 % 1) > 0.00001 || Math.abs(root2 % 1) > 0.00001) {
-            return "Корни уравнения: " + root1 + " и " + root2;
+            return root1 + ";" + root2;
         } else {
-            return "Уравнение не имеет вещественных корней.";
+            return null;
         }
 
     }
 
-    public static double four(double n, double m) {
+    public static double sumRows(double n, double m) {
         double sum = 0;
 
+        double term;
         while (true) {
-            double term = 1 / (Math.pow(n, 2)+n-2);
+
+            term = 1 / (Math.pow(n, 2)+n-2);
 
             if (Math.abs(term) < m) {
                 break;
@@ -71,16 +71,13 @@ public class Main {
         return sum;
     }
 
-    public static boolean five(String n) {
-        String text = n;
+    public static boolean wordPalindrome(String n) {
 
-        String cleanedText = text.replaceAll("[^a-zA-Z0-9]", "");
+        String cleanedText = n.replaceAll("[^a-zA-Z0-9]", "");
         StringBuilder sb = new StringBuilder(cleanedText);
         String reversedText = sb.reverse().toString();
 
-        boolean checkText = cleanedText.equalsIgnoreCase(reversedText);
-
-        return checkText;
+        return cleanedText.equalsIgnoreCase(reversedText);
     }
 
     public static void main(String[] args) {
@@ -88,26 +85,26 @@ public class Main {
         // (1)
         int n1 = 500;
         for (int i = 0; i <= n1; i++) {
-            System.out.println(one(i));
+            System.out.println(fizzBuzz(i));
         }
         // (2)
         String n2 = "Вера, котяра, – харя Токарева";
-        String result2 = two(n2);
+        String result2 = reverseString(n2);
         System.out.println(result2);
         // (3)
         double a2 = 2;
         double b2 = -4;
         double c2 = 1;
 
-        System.out.println(three(a2, b2, c2));
+        System.out.println(quadraticEquation(a2, b2, c2));
         // (4)
         double n4 = 2;
         double m4 = 1e-6;
-        double result4 = four(n4, m4);
+        double result4 = sumRows(n4, m4);
         System.out.println(result4);
         // (5)
         String n5 = "Аня как Яна";
-        boolean result5 = five(n5);
+        boolean result5 = wordPalindrome(n5);
         System.out.println(result5);
     }
 }
