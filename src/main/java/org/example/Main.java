@@ -10,5 +10,11 @@ public class Main {
         button.click();
         button.click();
         button.showNumberClick();
+
+        //2
+        Balance balance = new Balance();
+        balance.addRight(50);
+        balance.addLeft(45);
+        balance.result();
     }
 }
