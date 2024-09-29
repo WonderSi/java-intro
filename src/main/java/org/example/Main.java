@@ -33,5 +33,15 @@ public class Main {
         sep.even();
         sep.odd();
 
+        //5
+        Table table = new Table(3, 3);
+        table.setValue(0,0,1);
+        table.setValue(1,0,9);
+        table.setValue(2,0,5);
+        table.setValue(1,2,4);
+        table.showTable();
+        table.showAverage();
+
+        //6
     }
 }
