@@ -3,6 +3,7 @@ package org.example;
 
 import org.example.geometry2d.Circle;
 import org.example.geometry2d.Rectangle;
+import org.example.geometry3d.Cylinder;
 
 public class Main {
     public static void main(String[] args) {
@@ -51,6 +52,11 @@ public class Main {
         Rectangle rectangle = new Rectangle(3,5);
         System.out.println(circle);
         System.out.println(rectangle);
+
+        //6
+        //b
+        Cylinder cylinder = new Cylinder(17,140);
+        System.out.println(cylinder);
 
     }
 }
