@@ -24,5 +24,14 @@ public class Main {
         bell.sound();
         bell.sound();
         bell.sound();
+
+        //4
+        OddEvenSeparator sep = new OddEvenSeparator();
+        for (int i = 0; i <= 10; i++) {
+            sep.addNumber(i);
+        }
+        sep.even();
+        sep.odd();
+
     }
 }
