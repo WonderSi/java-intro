@@ -16,5 +16,12 @@ public class Main {
         balance.addRight(50);
         balance.addLeft(45);
         balance.result();
+
+        //3
+        Bell bell = new Bell();
+        bell.sound();
+        bell.sound();
+        bell.sound();
+        bell.sound();
     }
 }
