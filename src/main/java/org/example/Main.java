@@ -7,6 +7,7 @@ public class Main {
         Button button = new Button();
         button.click();
         button.showNumberClick();
+        button.reset();
         button.click();
         button.click();
         button.showNumberClick();

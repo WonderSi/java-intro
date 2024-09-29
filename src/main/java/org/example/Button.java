@@ -12,6 +12,10 @@ public class Button {
         numberClick++;
     }
 
+    public void reset() {
+        numberClick = 0;
+    }
+
     public void showNumberClick() {
         System.out.println("Количество нажатий на кнопку: " + getNumberClick());
     }
