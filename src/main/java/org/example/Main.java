@@ -1,6 +1,9 @@
 package org.example;
 
 
+import org.example.geometry2d.Circle;
+import org.example.geometry2d.Rectangle;
+
 public class Main {
     public static void main(String[] args) {
         //1
@@ -43,5 +46,11 @@ public class Main {
         table.showAverage();
 
         //6
+        //a
+        Circle circle = new Circle(2);
+        Rectangle rectangle = new Rectangle(3,5);
+        System.out.println(circle);
+        System.out.println(rectangle);
+
     }
 }
