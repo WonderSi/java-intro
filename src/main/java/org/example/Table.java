@@ -46,10 +46,8 @@ public class Table {
 
         for(int[] row: data) {
             for(int value : row) {
-                if (value != 0) {
-                    sum += value;
-                    count++;
-                }
+                sum += value;
+                count++;
             }
         }
 
