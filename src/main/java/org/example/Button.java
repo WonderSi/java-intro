@@ -3,8 +3,8 @@ package org.example;
 public class Button {
     private int numberClick = 0;
 
-    public int click() {
+    public void click() {
         numberClick++;
-        return numberClick;
+        System.out.println("Click count: " + numberClick);
     }
 }

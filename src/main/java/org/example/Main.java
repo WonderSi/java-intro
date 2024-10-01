@@ -13,13 +13,13 @@ public class Main {
         Button button = new Button();
         button.click();
         button.click();
-        System.out.println("Количество нажатий на кнопку: " + button.click());
+        button.click();
 
         //2
         Balance balance = new Balance();
         balance.addRight(50);
         balance.addLeft(45);
-        System.out.println(balance.result());
+        balance.result();
 
         //3
         Bell bell = new Bell();

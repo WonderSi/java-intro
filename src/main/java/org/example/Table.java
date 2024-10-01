@@ -57,11 +57,11 @@ public class Table {
     }
 
     public void showTable() {
-        System.out.println("Таблица:");
+        System.out.println("Table:");
         System.out.println(toString());
     }
 
     public void showAverage() {
-        System.out.println("Среднее арифметическое: " + average());
+        System.out.println("Arithmetic mean: " + average());
     }
 }
