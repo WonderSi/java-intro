@@ -5,11 +5,11 @@ public class Balance {
     private int left = 0;
 
     public void addRight( int weight) {
-        this.right = weight;
+        this.right += weight;
     }
 
     public void addLeft( int weight) {
-        this.left = weight;
+        this.left += weight;
     }
 
     public void result() {
