@@ -8,9 +8,9 @@ public class OddEvenSeparator {
 
     public void addNumber(int number) {
         if (number % 2 == 0) {
-            listOdd.add(number);
-        } else {
             listEven.add(number);
+        } else {
+            listOdd.add(number);
         }
     }
 
@@ -20,5 +20,13 @@ public class OddEvenSeparator {
 
     public void odd() {
         System.out.println(listOdd);
+    }
+
+    public List<Integer> getEven() {
+        return new ArrayList<>(listEven); // Return a copy of the even list ******* FOR TEST
+    }
+
+    public List<Integer> getOdd() {
+        return new ArrayList<>(listOdd); // Return a copy of the odd list ******* FOR TEST
     }
 }
