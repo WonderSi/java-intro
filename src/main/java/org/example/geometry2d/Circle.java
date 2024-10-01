@@ -1,10 +1,16 @@
 package org.example.geometry2d;
 
-public class Circle implements Figure {
-    private double radius;
+import org.example.exceptions.InvalidIncorrectRadius;
 
-    public Circle(double radius) {
-        this.radius = radius;
+public class Circle implements Figure {
+    private double radius; //Радиус коружности
+
+    public Circle(double radius) throws InvalidIncorrectRadius {
+        if (radius <= 0) {
+            throw new InvalidIncorrectRadius("Incorrect Radius. Radius must be greater than zero.");
+        } else {
+            this.radius = radius;
+        }
     }
 
     @Override
@@ -17,3 +23,4 @@ public class Circle implements Figure {
         return "Окружность с радиусом: " + radius + ", площадью: " + area();
     }
 }
+
