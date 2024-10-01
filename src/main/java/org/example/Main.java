@@ -1,14 +1,14 @@
 package org.example;
 
 
-import org.example.exceptions.InvalidIncorrectHeight;
-import org.example.exceptions.InvalidIncorrectRadius;
+import org.example.exceptions.IncorrectHeight;
+import org.example.exceptions.IncorrectRadius;
 import org.example.geometry2d.Circle;
 import org.example.geometry2d.Rectangle;
 import org.example.geometry3d.Cylinder;
 
 public class Main {
-    public static void main(String[] args) throws InvalidIncorrectRadius, InvalidIncorrectHeight {
+    public static void main(String[] args) throws IncorrectRadius, IncorrectHeight {
         //1
         Button button = new Button();
         button.click();

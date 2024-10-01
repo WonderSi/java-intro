@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.exceptions.InvalidIncorrectHeight;
-import org.example.exceptions.InvalidIncorrectRadius;
+import org.example.exceptions.IncorrectHeight;
+import org.example.exceptions.IncorrectRadius;
 import org.example.geometry3d.Cylinder;
 import org.junit.jupiter.api.Test;
 
@@ -130,20 +130,20 @@ class MainTest {
 
     //6
     @Test
-    public void testCylinderWithValidDimensions() throws InvalidIncorrectHeight, InvalidIncorrectRadius {
+    public void testCylinderWithValidDimensions() throws IncorrectHeight, IncorrectRadius {
         Cylinder cylinder = new Cylinder(3.0, 5.0);
         assertEquals(141.3716694115407, cylinder.volume());
     }
     @Test
     public void testCylinderWithInvalidRadius() {
-        Exception exception = assertThrows(InvalidIncorrectRadius.class, () -> {
+        Exception exception = assertThrows(IncorrectRadius.class, () -> {
             new Cylinder(0, 5.0);
         });
         assertEquals("Incorrect Radius. Radius must be greater than zero.", exception.getMessage());
     }
     @Test
     public void testCylinderWithInvalidHeight() {
-        Exception exception = assertThrows(InvalidIncorrectHeight.class, () -> {
+        Exception exception = assertThrows(IncorrectHeight.class, () -> {
             new Cylinder(3.0, 0);
         });
         assertEquals("Invalid height. Height must be greater than zero.", exception.getMessage());
