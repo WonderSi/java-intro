@@ -3,30 +3,30 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class OddEvenSeparator {
-    List<Integer> listEven = new ArrayList<>();
-    List<Integer> listOdd = new ArrayList<>();
+    List<Integer> evenNumbers = new ArrayList<>();
+    List<Integer> oddNumbers = new ArrayList<>();
 
     public void addNumber(int number) {
         if (number % 2 == 0) {
-            listEven.add(number);
+            evenNumbers.add(number);
         } else {
-            listOdd.add(number);
+            oddNumbers.add(number);
         }
     }
 
     public void even() {
-        System.out.println(listEven);
+        System.out.println(evenNumbers);
     }
 
     public void odd() {
-        System.out.println(listOdd);
+        System.out.println(oddNumbers);
     }
 
     public List<Integer> getEven() {
-        return new ArrayList<>(listEven); // Return a copy of the even list ******* FOR TEST
+        return new ArrayList<>(evenNumbers); // Return a copy of the even list ******* FOR TEST
     }
 
     public List<Integer> getOdd() {
-        return new ArrayList<>(listOdd); // Return a copy of the odd list ******* FOR TEST
+        return new ArrayList<>(oddNumbers); // Return a copy of the odd list ******* FOR TEST
     }
 }
