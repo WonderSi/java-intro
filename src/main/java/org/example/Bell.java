@@ -1,15 +1,15 @@
 package org.example;
 
 public class Bell {
-    private boolean ring = false;
+    private boolean bell = false;
 
     public void sound() {
-        if(ring) {
+        if(bell) {
             System.out.println("dong");
         } else {
             System.out.println("ding");
         }
 
-        ring = !ring;
+        bell = !bell;
     }
 }
