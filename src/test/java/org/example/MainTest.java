@@ -66,6 +66,62 @@ class MainTest {
         assertEquals(Arrays.asList(1, 3), separator.getOdd(), "The odd list should contain 1 and 3");
     }
 
+    //5
+    @Test
+    public void testInitialValuesAreZero() {
+        Table table = new Table(3,3);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                assertEquals(0, table.getValue(i,j), "Initial value should be zero");
+            }
+        }
+    }
+    @Test
+    public void testSetValueAndGetValue() {
+        Table table = new Table(3,3);
 
+        table.setValue(1, 2, 5);
+        assertEquals(5, table.getValue(1, 2), "Value at (1,2) should be 5");
 
+        table.setValue(0, 0, 10);
+        assertEquals(10, table.getValue(0, 0), "Value at (0,0) should be 10");
+
+        table.setValue(2, 2, -3);
+        assertEquals(-3, table.getValue(2, 2), "Value at (2,2) should be -3");
+    }
+    @Test
+    public void testRowsAndCols() {
+        Table table = new Table(3,5);
+
+        assertEquals(3, table.rows(), "Number of rows should be 3");
+        assertEquals(5, table.cols(), "Number of columns should be 5");
+    }
+    @Test
+    public void testToString() {
+        Table table = new Table(3,5);
+
+        table.setValue(0, 0, 1);
+        table.setValue(1, 1, 2);
+
+        String expectedOutput = "1 0 0 0 0 \n" +
+                                "0 2 0 0 0 \n" +
+                                "0 0 0 0 0";
+
+        assertEquals(expectedOutput.trim(), table.toString().trim(), "toString() output is incorrect");
+    }
+    @Test
+    public void testAverage() {
+        Table table = new Table(3,5);
+
+        assertEquals(0.0, table.average(), "Average should be zero");
+
+        table.setValue(0, 0, 2);
+        table.setValue(1, 1, 4);
+
+        assertEquals(3.0, table.average(), "Average should be (2 + 4) / 2 = 3.0");
+
+        table.setValue(2, 2, -6);
+
+        assertEquals(0.0, table.average(), "Average should be (2 + 4 -6) / 3 = 0.0");
+    }
 }

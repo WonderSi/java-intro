@@ -59,7 +59,6 @@ public class Main {
 
         //6
         //c
-        Cylinder wrong_cylinder = new Cylinder(5.0, 0);
 
 
 
