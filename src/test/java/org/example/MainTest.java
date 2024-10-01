@@ -124,4 +124,20 @@ class MainTest {
 
         assertEquals(0.0, table.average(), "Average should be (2 + 4 -6) / 3 = 0.0");
     }
+        assertEquals(141.0, cylinder.volume());
+    }
+    @Test
+    public void testCylinderWithInvalidRadius() {
+        Exception exception = assertThrows(InvalidIncorrectRadius.class, () -> {
+            new Cylinder(0, 5.0);
+        });
+        assertEquals("Incorrect Radius. Radius must be greater than zero.", exception.getMessage());
+    }
+    @Test
+    public void testCylinderWithInvalidHeight() {
+        Exception exception = assertThrows(InvalidIncorrectHeight.class, () -> {
+            new Cylinder(3.0, 0);
+        });
+        assertEquals("Invalid height. Height must be greater than zero.", exception.getMessage());
+    }
 }

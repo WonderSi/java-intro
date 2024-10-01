@@ -18,8 +18,8 @@ public class Cylinder {
         }
     }
 
-    public double volume() {
-        return radius.area() * height; //Объем цилиндра
+    public long volume() {
+        return (long) (radius.area() * height); //Объем цилиндра
     }
 
     @Override
