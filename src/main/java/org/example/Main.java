@@ -22,7 +22,7 @@ public class Main {
         Balance balance = new Balance();
         balance.addRight(50);
         balance.addLeft(45);
-        balance.result();
+        System.out.println(balance.result());
 
         //3
         Bell bell = new Bell();

@@ -12,13 +12,13 @@ public class Balance {
         this.left = weight;
     }
 
-    public void result() {
+    public String result() {
         if ( this.right < this.left) {
-            System.out.println("L");
+            return "L";
         } else if ( this.right > this.left) {
-            System.out.println("R");
+            return "R";
         } else {
-            System.out.println("=");
+            return "=";
         }
     }
 
