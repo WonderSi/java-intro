@@ -9,16 +9,7 @@ class MainTest {
     @Test
     public void testInitialClickCount() {
         Button button = new Button();
-        assertEquals(0, button.getNumberClick(), "Initial click count should be 0");
-    }
-    @Test
-    public void testResetClickCount() {
-        Button button = new Button();
-        button.click();
-        button.reset();
-        button.click();
-        button.click();
-        assertEquals(2, button.getNumberClick(), "Click count should be 2 after reset");
+        assertEquals(1, button.click(), "Click count should be 1");
     }
 
     //2
@@ -41,5 +32,7 @@ class MainTest {
         balance.addLeft(94);
         assertEquals("L", balance.result(), "Left should be heavier");
     }
+
+    //3
 
 }

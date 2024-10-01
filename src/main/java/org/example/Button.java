@@ -3,20 +3,8 @@ package org.example;
 public class Button {
     private int numberClick = 0;
 
-
-    public int getNumberClick() {
-        return numberClick;
-    }
-
-    public void click() {
+    public int click() {
         numberClick++;
-    }
-
-    public void reset() {
-        numberClick = 0;
-    }
-
-    public void showNumberClick() {
-        System.out.println("Количество нажатий на кнопку: " + getNumberClick());
+        return numberClick;
     }
 }

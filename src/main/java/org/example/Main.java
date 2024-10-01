@@ -12,11 +12,8 @@ public class Main {
         //1
         Button button = new Button();
         button.click();
-        button.showNumberClick();
-        button.reset();
         button.click();
-        button.click();
-        button.showNumberClick();
+        System.out.println("Количество нажатий на кнопку: " + button.click());
 
         //2
         Balance balance = new Balance();
