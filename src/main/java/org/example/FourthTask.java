@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FourthTask {
-    public static void main(String[] args) {
+    public static void result() {
         String text = "This is an example. This example is simple.";
 
         // Преобразуем текст в нижний регистр и разбиваем на слова
