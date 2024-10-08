@@ -3,8 +3,7 @@ package org.example;
 import java.util.*;
 
 public class PrimesGeneratorTest {
-    public static void result(int N) {
-        PrimesGenerator generator = new PrimesGenerator(N);
+    PrimesGeneratorTest(PrimesGenerator generator) {
 
         System.out.println("Простые числа в прямом порядке:");
         Iterator<Integer> currentIterator = generator.currentIterator();
