@@ -13,20 +13,7 @@ public class Main {
         //1
         FirstTask.result();
         //2
-        int N = 10; // Задайте количество простых чисел для генерации
-        PrimesGenerator generator = new PrimesGenerator(N);
-
-        System.out.println("Простые числа в прямом порядке:");
-        Iterator<Integer> currentIterator = generator.currentIterator();
-        while (currentIterator.hasNext()) {
-            System.out.print(currentIterator.next() + " ");
-        }
-
-        System.out.println("\nПростые числа в обратном порядке:");
-        Iterator<Integer> reverseIterator = generator.reverseIterator();
-        while (reverseIterator.hasNext()) {
-            System.out.print(reverseIterator.next() + " ");
-        }
+        PrimesGeneratorTest.result(10);
 
     }
 }
