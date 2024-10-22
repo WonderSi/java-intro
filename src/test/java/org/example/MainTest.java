@@ -119,7 +119,14 @@ class MainTest {
 
         assertEquals(0.0, table.average(), "Average should be zero");
 
+        table.setValue(0, 0, 2);
+        table.setValue(1, 1, 4);
 
+        assertEquals(0.4, table.average());
+
+        table.setValue(2, 2, -3);
+
+        assertEquals(0.2, table.average());
     }
 
     //6
