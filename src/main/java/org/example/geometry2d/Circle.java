@@ -22,5 +22,6 @@ public class Circle implements Figure {
     public String toString() {
         return "Окружность с радиусом: " + radius + ", площадью: " + area();
     }
+
 }
 

@@ -29,4 +29,5 @@ public class OddEvenSeparator {
     public List<Integer> getOdd() {
         return new ArrayList<>(oddNumbers); // Return a copy of the odd list ******* FOR TEST
     }
+
 }

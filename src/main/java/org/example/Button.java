@@ -7,4 +7,5 @@ public class Button {
         numberClick++;
         System.out.println("Click count: " + numberClick);
     }
+
 }

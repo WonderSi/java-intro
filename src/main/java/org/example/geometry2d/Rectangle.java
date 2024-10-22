@@ -18,4 +18,5 @@ public class Rectangle implements Figure {
     public String toString() {
         return "Прямоугольник с шириной: " + wight + ", высотой: " + height + ", площадью: " + area();
     }
+
 }
