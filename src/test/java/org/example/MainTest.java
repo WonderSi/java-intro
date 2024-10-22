@@ -106,9 +106,10 @@ class MainTest {
         table.setValue(0, 0, 1);
         table.setValue(1, 1, 2);
 
-        String expectedOutput = "1 0 0 0 0 \n" +
-                                "0 2 0 0 0 \n" +
-                                "0 0 0 0 0";
+        String expectedOutput = """
+                1 0 0 0 0\s
+                0 2 0 0 0\s
+                0 0 0 0 0""";
 
         assertEquals(expectedOutput.trim(), table.toString().trim(), "toString() output is incorrect");
     }
