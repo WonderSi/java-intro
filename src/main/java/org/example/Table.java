@@ -60,6 +60,6 @@ public class Table {
     }
 
     public void showAverage() {
-        System.out.println("Arithmetic mean: " + average());
+        System.out.println("Среднее арифметическое: " + average());
     }
 }
