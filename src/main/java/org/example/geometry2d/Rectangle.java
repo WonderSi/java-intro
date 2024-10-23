@@ -5,6 +5,8 @@ public class Rectangle implements Figure {
     public double height;
 
     public Rectangle(double wight, double height) {
+        if (wight <= 0 || height <= 0)
+            throw new IllegalArgumentException();
         this.wight = wight;
         this.height = height;
     }

@@ -56,7 +56,7 @@ public class Table {
 
     public void showTable() {
         System.out.println("Table:");
-        System.out.println(toString());
+        System.out.println(this);
     }
 
     public void showAverage() {

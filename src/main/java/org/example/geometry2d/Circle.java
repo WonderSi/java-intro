@@ -1,15 +1,13 @@
 package org.example.geometry2d;
 
-import org.example.exceptions.IncorrectRadius;
+import org.example.exceptions.IncorrectRadiusException;
 
 public class Circle implements Figure {
     private double radius; //Радиус коружности
 
-    public Circle(double radius) throws IncorrectRadius {
+    public Circle(double radius) throws IncorrectRadiusException {
         if (radius <= 0) {
-            throw new IncorrectRadius("Incorrect Radius. Radius must be greater than zero.");
-        } else {
-            this.radius = radius;
+            throw new IncorrectRadiusException("Incorrect Radius. Radius must be greater than zero.");
         }
     }
 
