@@ -10,7 +10,7 @@ public class ShoeWarehouse {
     // Максимальный размер склада (например, 10 заказов)
     private static final int MAX_ORDERS = 10;
 
-    // Метод для получения нового заказа (производителем)
+    // Метод для получения нового заказа (производителем) Producer
     public synchronized void receiveOrder(Order order) throws InterruptedException {
         while (orders.size() >= MAX_ORDERS) {
             System.out.println("Склад переполнен. Ожидание свободного места...");
@@ -21,7 +21,7 @@ public class ShoeWarehouse {
         notifyAll();  // Оповещаем всех потребителей, что есть новый заказ
     }
 
-    // Метод для выполнения заказа (потребителем)
+    // Метод для выполнения заказа (потребителем) Consumer
     public synchronized Order fulfillOrder() throws InterruptedException {
         while (orders.isEmpty()) {
             System.out.println("Нет заказов. Ожидание новых...");

@@ -1,4 +1,3 @@
-// Producer.java
 package org.example.taskthree;
 
 import java.util.concurrent.ExecutorService;
