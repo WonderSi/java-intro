@@ -12,7 +12,7 @@ public class Main {
         ShoeWarehouse warehouse = new ShoeWarehouse(numConsumers);
 
         // Создаем и запускаем поток производителя
-        ExecutorService producerService = Executors.newSingleThreadExecutor();
+        ExecutorService producerService = Executors.newSingleThreadExecutor(); // Пул с единственным потоком
         Producer producer = new Producer(warehouse, numOrders);
         producerService.submit(producer);
 

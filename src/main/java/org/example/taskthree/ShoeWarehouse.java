@@ -13,7 +13,7 @@ public class ShoeWarehouse {
 
     public ShoeWarehouse(int numConsumers) {
         // Используем FixedThreadPool для потребителей
-        executorService = Executors.newFixedThreadPool(numConsumers);
+        executorService = Executors.newFixedThreadPool(numConsumers); // Пул с фиксированным количеством потоков
     }
 
     // Метод для получения нового заказа (производителем)
@@ -49,12 +49,5 @@ public class ShoeWarehouse {
     // Останавливаем пул потоков
     public void shutdown() {
         executorService.shutdown();
-        try {
-            if (!executorService.awaitTermination(60, TimeUnit.SECONDS)) {
-                executorService.shutdownNow();
-            }
-        } catch (InterruptedException e) {
-            executorService.shutdownNow();
-        }
     }
 }
