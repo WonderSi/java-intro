@@ -1,4 +1,3 @@
-// ShoeWarehouse.java
 package org.example.tasktwo;
 
 import java.util.LinkedList;

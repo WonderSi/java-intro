@@ -1,4 +1,3 @@
-// Main.java
 package org.example.tasktwo;
 
 public class Main {

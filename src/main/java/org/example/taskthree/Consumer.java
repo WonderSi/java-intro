@@ -1,4 +1,3 @@
-// Consumer.java
 package org.example.taskthree;
 
 public class Consumer implements Runnable {
