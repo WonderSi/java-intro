@@ -13,8 +13,12 @@ public class ShoeWarehouse {
     // Метод для получения нового заказа (производителем) Producer
     public synchronized void receiveOrder(Order order) throws InterruptedException {
         while (orders.size() >= MAX_ORDERS) {
-            System.out.println("Склад переполнен. Ожидание свободного места...");
-            wait();  // Ожидаем, пока не освободится место
+            try {
+                System.out.println("Склад переполнен. Ожидание свободного места...");
+                wait();  // Ожидаем, пока не освободится место
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
         orders.add(order);
         System.out.println("Получен заказ: " + order);
@@ -24,8 +28,12 @@ public class ShoeWarehouse {
     // Метод для выполнения заказа (потребителем) Consumer
     public synchronized Order fulfillOrder() throws InterruptedException {
         while (orders.isEmpty()) {
-            System.out.println("Нет заказов. Ожидание новых...");
-            wait();  // Ожидаем, пока не появится заказ
+            try {
+                System.out.println("Нет заказов. Ожидание новых...");
+                wait();  // Ожидаем, пока не появится заказ
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
         Order order = orders.poll();  // Извлекаем и выполняем первый заказ
         System.out.println("Выполняется заказ: " + order);
