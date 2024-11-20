@@ -4,13 +4,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class ShoeWarehouse {
-    // Статический список для всех заказов (FIFO)
     public static final Queue<Order> orders = new LinkedList<>();
 
-    // Максимальный размер склада (например, 10 заказов)
     private static final int MAX_ORDERS = 10;
 
-    // Метод для получения нового заказа (производителем) Producer
+    // Получения нового заказа Producer
     public synchronized void receiveOrder(Order order) throws InterruptedException {
         while (orders.size() >= MAX_ORDERS) {
             try {
@@ -25,7 +23,7 @@ public class ShoeWarehouse {
         notifyAll();  // Оповещаем всех потребителей, что есть новый заказ
     }
 
-    // Метод для выполнения заказа (потребителем) Consumer
+    // Выполнение заказа Consumer
     public synchronized Order fulfillOrder() throws InterruptedException {
         while (orders.isEmpty()) {
             try {
@@ -35,7 +33,7 @@ public class ShoeWarehouse {
                 throw new RuntimeException(e);
             }
         }
-        Order order = orders.poll();  // Извлекаем и выполняем первый заказ
+        Order order = orders.poll();
         System.out.println("Выполняется заказ: " + order);
         notifyAll();  // Оповещаем всех производителей, что можно добавлять новые заказы
         return order;

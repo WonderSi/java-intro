@@ -12,11 +12,10 @@ public class ShoeWarehouse {
     private final ExecutorService executorService;
 
     public ShoeWarehouse(int numConsumers) {
-        // Используем FixedThreadPool для потребителей
         executorService = Executors.newFixedThreadPool(numConsumers); // Пул с фиксированным количеством потоков
     }
 
-    // Метод для получения нового заказа (производителем)
+    // Получения нового заказа Producer
     public synchronized void receiveOrder(Order order) throws InterruptedException {
         while (orders.size() >= MAX_ORDERS) {
             try {
@@ -28,10 +27,10 @@ public class ShoeWarehouse {
         }
         orders.add(order);
         System.out.println("Получен заказ: " + order);
-        notifyAll();
+        notifyAll(); // Оповещаем всех потребителей, что есть новый заказ
     }
 
-    // Метод для выполнения заказа (потребителем)
+    // Выполнение заказа Consumer
     public synchronized Order fulfillOrder() throws InterruptedException {
         while (orders.isEmpty()) {
             try {
@@ -43,7 +42,7 @@ public class ShoeWarehouse {
         }
         Order order = orders.poll();
         System.out.println("Выполняется заказ: " + order);
-        notifyAll();
+        notifyAll(); // Оповещаем всех производителей, что можно добавлять новые заказы
         return order;
     }
 
@@ -54,7 +53,7 @@ public class ShoeWarehouse {
         }
     }
 
-    // Останавливаем пул потоков
+    // Стоп пул потоков
     public void shutdown() {
         executorService.shutdown();
     }

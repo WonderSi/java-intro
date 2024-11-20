@@ -3,7 +3,7 @@ package org.example.tasktwo;
 public record Order(int orderId, String shoeType, int quantity) {
 }
 
-// По капотом record. Для наглядности
+// Под капотом record. Для наглядности
 /*
 public class Order {
     private final int orderId;

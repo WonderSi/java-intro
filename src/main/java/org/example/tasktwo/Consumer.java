@@ -1,9 +1,8 @@
-// Consumer.java
 package org.example.tasktwo;
 
 public class Consumer extends Thread {
     private final ShoeWarehouse warehouse;
-    private final int ordersToProcess;  // Количество заказов для обработки
+    private final int ordersToProcess;
 
     public Consumer(ShoeWarehouse warehouse, int ordersToProcess) {
         this.warehouse = warehouse;
@@ -15,7 +14,7 @@ public class Consumer extends Thread {
         try {
             for (int i = 0; i < ordersToProcess; i++) {
                 Order order = warehouse.fulfillOrder();  // Получаем заказ для обработки. Это если его нужно куда-то дальше использовать
-                Thread.sleep(1000);  // Задержка для имитации времени обработки заказа
+                Thread.sleep(1000);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

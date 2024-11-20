@@ -14,7 +14,7 @@ public class Consumer implements Runnable {
         try {
             for (int i = 0; i < ordersToProcess; i++) {
                 Order order = warehouse.fulfillOrder();
-                Thread.sleep(1000);  // Имитация времени для выполнения заказа
+                Thread.sleep(1000);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

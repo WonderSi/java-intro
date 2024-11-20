@@ -21,7 +21,7 @@ public class Producer implements Runnable {
                 Order order = new Order(i, shoeType, quantity);
 
                 warehouse.receiveOrder(order);
-                Thread.sleep(500);  // Имитация времени для создания заказа
+                Thread.sleep(500);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
