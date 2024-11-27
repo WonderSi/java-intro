@@ -42,17 +42,27 @@ class Sms {
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
+
+        //**********************************************************************************
+        // Загрузка файла
+        //**********************************************************************************
+
         Gson gson = new Gson();
         List<Visitor> visitors = gson.fromJson(new FileReader("src/main/resources/books.json"), new TypeToken<List<Visitor>>() {
         }.getType());
 
-        //1
+        //**********************************************************************************
+        // Задание 1
+        //**********************************************************************************
+
         System.out.println("\nЗадание 1");
         System.out.println("Посетители:");
         visitors.forEach(v -> System.out.println(v.getName() + " " + v.getSurname()));
         System.out.println("Количество посетителей: " + visitors.size());
 
-        //2
+        //**********************************************************************************
+        // Задание 2
+        //**********************************************************************************
         System.out.println("\nЗадание 2");
         Set<Book> uniqueBooks = visitors.stream()
                 .flatMap(visitor -> visitor.getFavoriteBooks().stream())
@@ -61,7 +71,10 @@ public class Main {
         uniqueBooks.forEach(book -> System.out.println(book.getName() + " by " + book.getAuthor()));
         System.out.println("Кол-во уникальных книг: " + uniqueBooks.size());
 
-        //3
+        //**********************************************************************************
+        // Задание 3
+        //**********************************************************************************
+
         System.out.println("\nЗадание 3");
         List<Book> sortedBooks = uniqueBooks.stream()
                 .sorted(Comparator.comparingInt(Book::getPublishingYear))
@@ -69,9 +82,10 @@ public class Main {
         System.out.println("Список книг (отсортированных по году издания): ");
         sortedBooks.forEach(book -> System.out.println(book.getName() + " (" + book.getPublishingYear() + ")"));
 
+        //**********************************************************************************
+        // Задание 4
+        //**********************************************************************************
 
-
-        //4
         System.out.println("\nЗадание 4");
 //        boolean hasJaneAusten1 = visitors.stream()
 //                .flatMap(v -> v.getFavoriteBooks().stream())
@@ -85,8 +99,10 @@ public class Main {
                     " в избранном есть книга автора Jane Austen: " + hasJaneAusten2);
         });
 
+        //**********************************************************************************
+        // Задание 5
+        //**********************************************************************************
 
-        //5
         System.out.println("\nЗадание 5");
         int maxFavoriteBooks = visitors.stream()
                 .mapToInt(v -> v.getFavoriteBooks().size())
@@ -94,7 +110,10 @@ public class Main {
                 .orElse(0);
         System.out.println("Максимальное число добавленных в избранное книг: " + maxFavoriteBooks);
 
-        //6
+        //**********************************************************************************
+        // Задание 6
+        //**********************************************************************************
+
         System.out.println("\nЗадание 6");
         double averageFavorites = visitors.stream()
                 .mapToInt(visitor -> visitor.getFavoriteBooks().size())
